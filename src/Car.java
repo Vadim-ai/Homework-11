@@ -1,4 +1,4 @@
-public class Car extends Transport implements Service{
+public class Car extends Bicycle implements Service{
 
     public Car (String modelName,
                 int wheelsCount){
@@ -15,10 +15,7 @@ public class Car extends Transport implements Service{
 
     @Override
     public void check() {
-        System.out.println("Обслуживаем " + this.getModelName());
-        for (int i = 0; i < this.getWheelsCount(); i++) {
-            this.updateTyre();
-        }
+        super.check();
         this.checkEngine();
     }
 }
